@@ -1,5 +1,6 @@
 # yltan
-# Personal Website
+
+## Personal Website
 
 This repository contains the source code for my personal website.
 
@@ -13,11 +14,11 @@ To run this website locally on your machine, follow the steps below:
 
 1. Clone this repository using the following command:
 
-git clone https://github.com/YL-Tan/yltan.git
+      git clone https://github.com/YL-Tan/yltan.git
 
 2. Navigate to the directory:
 
-cd yltan
+      cd yltan
 
 3. Open `index.html` in your preferred web browser.
 
