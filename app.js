@@ -42,8 +42,8 @@ if (sections && controls && sectBtn && allSections) {
 themeBtn.addEventListener('click', () => {
     document.body.classList.toggle("light-mode");
     if (document.body.classList.contains('light-mode')) {
-        themeBtn.setAttribute('data-tooltip', 'Dark Mode');
-    } else {
         themeBtn.setAttribute('data-tooltip', 'Light Mode');
+    } else {
+        themeBtn.setAttribute('data-tooltip', 'Dark Mode');
     }
 });
