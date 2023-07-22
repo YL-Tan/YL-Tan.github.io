@@ -1,37 +1,49 @@
 const sections = document.querySelectorAll('.section');
-const sectBtns = document.querySelectorAll('.controls');
+const controls = document.querySelector('.controls');
 const sectBtn = document.querySelectorAll('.control');
 const allSections = document.querySelector('.main-content');
+const themeBtn = document.querySelector('.theme-btn');
 
-function PageTransitions(){
-    //Button click active class
-    for(let i = 0; i < sectBtn.length; i++){
-        sectBtn[i].addEventListener('click', function(){
-            let currentBtn = document.querySelectorAll('.active-btn');
-            currentBtn[0].className = currentBtn[0].className.replace('active-btn', '');
-            this.className += ' active-btn'
-        }) 
+// Event Delegation
+controls.addEventListener('click', function(e){
+    const btn = e.target.closest('.control');
+    if (!btn) return; // guard clause
+    const id = btn.dataset.id;
+    if (!id) return; // guard clause
+
+    // remove active-btn class from previous active button
+    const currentBtn = document.querySelector('.active-btn');
+    if (currentBtn) {
+        currentBtn.classList.remove('active-btn');
     }
 
-    //Sections Active
-    allSections.addEventListener('click', (e)=> {
-        const id = e.target.dataset.id;
-        if(id){
-            //remove selected from the other buttons
-            sectBtns.forEach((btn) =>{
-                btn.classList.remove('active')
-            })
-            e.target.classList.add('active')
+    // add active-btn class to the current active button
+    btn.classList.add('active-btn');
 
-            //hide other sections
-            sections.forEach((section)=>{
-                section.classList.remove('active')
-            })
+    // remove active class from previous active section
+    const currentSection = document.querySelector('.section.active');
+    if (currentSection) {
+        currentSection.classList.remove('active');
+    }
 
-            const element = document.getElementById(id);
-            element.classList.add('active');
-        }
-    })
+    // add active class to the current active section
+    const element = document.getElementById(id);
+    if (element) {
+        element.classList.add('active');
+    }
+});
+
+if (sections && controls && sectBtn && allSections) {
+    console.log('All DOM selections are successful.');
+} else {
+    console.error('Some DOM selections failed');
 }
 
-PageTransitions();
+themeBtn.addEventListener('click', () => {
+    document.body.classList.toggle("light-mode");
+    if (document.body.classList.contains('light-mode')) {
+        themeBtn.setAttribute('data-tooltip', 'Dark Mode');
+    } else {
+        themeBtn.setAttribute('data-tooltip', 'Light Mode');
+    }
+});
