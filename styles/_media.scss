@@ -17,6 +17,28 @@
     }
 }
 
+.timeline-item {
+    @media (max-width: 1070px) {
+        width: 100%;  // takes the full width of the screen
+        padding: 20px; // increase padding for better visual separation
+    }
+
+    .image {
+        width: 100%; // image takes full width of timeline-item
+        max-width: 300px; // limit to reasonable size
+        margin: 0 auto 15px auto; // center image and add margin at the bottom
+
+        @media (max-width: 1070px) {
+            max-width: 100%; // image takes full width of timeline-item on smaller screens
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
 @media (max-width: 1250px) {
     .header-content .right-header{
         padding-right: 9rem;
@@ -118,13 +140,24 @@
             }
         }
     }
-    .about-stats {
-        grid-template-columns: repeat(1, 1fr);
-    }
     .main-title h2 {
         font-size: 2rem;
         span {
             font-size: 2.3rem;
+        }
+    }
+    .timeline-item{
+        width: 95%; // adjust as needed, can be set to 100% for full width
+        margin: 1em auto;
+        display: grid;
+        gap: 1em;
+        padding: 1em;
+        grid-template-rows: auto auto 1fr;
+      
+        &::before {
+          left: 50%;
+          transform: translateX(-50%);
+          top: -20px;
         }
     }
 }
