@@ -82,9 +82,9 @@ section {
 }
 
 .wave-link {
-  position: absolute;
+  position: relative;
   overflow: hidden;
-  text-decoration: none;
+  line-height: 0.95; /* Match this with the rest of your text */
 }
 
 .wave-link::after {
