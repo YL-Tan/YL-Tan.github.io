@@ -43,6 +43,9 @@
     .header-content .right-header{
         padding-right: 9rem;
     }
+    .projects{
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 1070px) {
@@ -81,6 +84,12 @@
     }
     .about-container .left-about {
         padding-right: 0rem;
+    }
+}
+
+@media (max-width:660px){
+    .projects{
+        grid-template-columns: repeat(1, 1fr);
     }
 }
 
@@ -139,6 +148,11 @@
                 padding-left: 0;
             }
         }
+    }
+    .projects{
+        grid-template-columns: repeat(1, 1fr);
+        padding-bottom: 6rem;
+        margin-top: 1rem;
     }
     .main-title h2 {
         font-size: 2rem;
