@@ -216,6 +216,9 @@ section {
   margin: 1.5rem 0;
   line-height: 2rem;
 }
+.header-content .right-header p span {
+  color: var(--color-secondary);
+}
 
 .port-text {
   padding: 2rem 0;
