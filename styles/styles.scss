@@ -437,6 +437,9 @@ section{
             line-height: 2rem;
             padding: 1rem;
             color: var(--color-grey-1);
+            span{
+                color: var(--color-secondary);
+            }
         }
         h4 {
             font-size: 2rem;

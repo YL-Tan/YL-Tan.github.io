@@ -445,6 +445,9 @@ section {
   padding: 1rem;
   color: var(--color-grey-1);
 }
+.about-container .left-about p span {
+  color: var(--color-secondary);
+}
 .about-container .left-about h4 {
   font-size: 2rem;
   text-transform: uppercase;
