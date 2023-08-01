@@ -1,177 +1,162 @@
-.about-container .left-about p{
-    padding-left: 0;
+@mixin right-header-style {
+  grid-row: 1;
+  padding-right: 0rem !important;
+  width: 90%;
+  margin: 0 auto;
+
+  .name {
+    font-size: 2.5rem !important;
+    text-align: center;
+    padding-top: 3rem;
+  }
+}
+
+@mixin header-content-style {
+  grid-template-columns: repeat(1, 1fr);
+  padding-bottom: 6rem;
+}
+
+.header-content {
+  @media (max-width: 1250px) {
+    .right-header {
+      padding-right: 9rem;
+    }
+  }
+
+  @media (max-width: 970px) {
+    @include header-content-style;
+
+    .left-header {
+      .h-shape {
+        display: none;
+      }
+      .image {
+        width: 90% !important;
+        margin: 0 auto !important;
+      }
+    }
+    .right-header {
+      @include right-header-style;
+    }
+  }
+
+  @media (max-width: 600px) {
+    @include header-content-style;
+
+    .left-header {
+      .h-shape {
+        display: none;
+      }
+      .image {
+        margin: 0 auto;
+        width: 90%;
+      }
+    }
+    .right-header {
+      @include right-header-style;
+    }
+  }
+}
+
+.about-container {
+  @media (max-width: 1070px) {
+    grid-template-columns: repeat(1, 1fr);
+    .right-about {
+      padding-top: 2.5rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: repeat(1, 1fr);
+
+    .right-about {
+      grid-template-columns: repeat(1, 1fr);
+      padding-top: 2.5rem;
+    }
+
+    .left-about {
+      padding-right: 0;
+
+      p {
+        padding-left: 0;
+      }
+    }
+  }
+}
+
+.projects {
+  @media (max-width: 1250px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 660px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: repeat(1, 1fr);
+    padding-bottom: 6rem;
+    margin-top: 1rem;
+  }
 }
 
 .main-title h2 {
-    @media (max-width: 1070px) {
-        font-size: 4rem;
-        span{
-            font-size: 4rem;
-        }
+  @media (max-width: 970px) {
+    font-size: 4rem;
+    span {
+      font-size: 4rem;
     }
-    @media (max-width: 700px) {
-        font-size: 3rem;
-        span{
-            font-size: 3rem;
-        }
-    }
-}
+  }
 
-.timeline-item {
-    @media (max-width: 1070px) {
-        width: 100%;  // takes the full width of the screen
-        padding: 20px; // increase padding for better visual separation
+  @media (max-width: 600px) {
+    font-size: 2rem;
+    span {
+      font-size: 2.3rem;
     }
-
-    .image {
-        width: 100%; // image takes full width of timeline-item
-        max-width: 300px; // limit to reasonable size
-        margin: 0 auto 15px auto; // center image and add margin at the bottom
-
-        @media (max-width: 1070px) {
-            max-width: 100%; // image takes full width of timeline-item on smaller screens
-        }
-
-        img {
-            width: 100%;
-            height: auto;
-        }
-    }
-}
-
-@media (max-width: 1250px) {
-    .header-content .right-header{
-        padding-right: 9rem;
-    }
-    .projects{
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 1070px) {
-    .about-container{
-        grid-template-columns: repeat(1, 1fr);
-        .right-about{
-            padding-top: 2.5rem;
-        }
-    }
-}
-
-@media (max-width: 970px) {
-    .header-content {
-        grid-template-columns: repeat(1, 1fr);
-        padding-bottom: 6rem;
-    }
-    .left-header {
-        .h-shape {
-            display: none;
-        }
-        .image {
-            width: 90% !important;
-            margin: 0 auto !important;
-        }
-    }
-    .right-header {
-        grid-row: 1;
-        padding-right: 0rem !important;
-        width: 90%;
-        margin: 0 auto;
-        .name {
-            font-size: 2.5rem !important;
-            text-align: center;
-            padding-top: 3rem;
-        }
-    }
-    .about-container .left-about {
-        padding-right: 0rem;
-    }
-}
-
-@media (max-width:660px){
-    .projects{
-        grid-template-columns: repeat(1, 1fr);
-    }
+  }
 }
 
 @media (max-width: 600px) {
-    header {
-        padding: 0;
+  header {
+    padding: 0;
+  }
+
+  .theme-btn {
+    width: 50px;
+    height: 50px;
+  }
+
+  .controls {
+    top: auto;
+    bottom: 0;
+    flex-direction: row;
+    justify-content: center;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    background-color: var(--color-grey-5);
+
+    .control {
+      margin: 1rem 0.3rem;
     }
-    .theme-btn {
-        width: 50px;
-        height: 50px;
+  }
+
+  .section {
+    padding: 3.5rem 2rem;
+  }
+
+  .timeline-item {
+    width: 95%; // adjust as needed, can be set to 100% for full width
+    margin: 1em auto;
+    display: grid;
+    gap: 1em;
+    padding: 1em;
+    grid-template-rows: auto auto 1fr;
+
+    &::before {
+      left: 50%;
+      transform: translateX(-50%);
+      top: -20px;
     }
-    .header-content {
-        grid-template-columns: repeat(1, 1fr);
-        padding-bottom: 6rem;
-    }
-    .left-header .h-shape {
-        display: none;
-    }
-    .right-header {
-        grid-row: 1;
-        padding-right: 0rem !important;
-        width: 90%;
-        margin: 0 auto;
-        .name {
-            font-size: 2.5rem !important;
-            text-align: center;
-            padding-top: 3rem;
-        }
-    }
-    .header-content .left-header .image {
-        margin: 0 auto;
-        width: 90%;
-    }
-    .controls {
-        top: auto;
-        bottom: 0;
-        flex-direction: row;
-        justify-content: center;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100%;
-        background-color: var(--color-grey-5);
-        .control {
-            margin: 1rem .3rem;
-        }
-    }
-    .about-container {
-        grid-template-columns: repeat(1, 1fr);
-        .right-about {
-            grid-template-columns: repeat(1, 1fr);
-            padding-top: 2.5rem;
-        }
-        .left-about {
-            padding-right: 0;
-            p {
-                padding-left: 0;
-            }
-        }
-    }
-    .projects{
-        grid-template-columns: repeat(1, 1fr);
-        padding-bottom: 6rem;
-        margin-top: 1rem;
-    }
-    .main-title h2 {
-        font-size: 2rem;
-        span {
-            font-size: 2.3rem;
-        }
-    }
-    .timeline-item{
-        width: 95%; // adjust as needed, can be set to 100% for full width
-        margin: 1em auto;
-        display: grid;
-        gap: 1em;
-        padding: 1em;
-        grid-template-rows: auto auto 1fr;
-      
-        &::before {
-          left: 50%;
-          transform: translateX(-50%);
-          top: -20px;
-        }
-    }
+  }
 }
