@@ -533,19 +533,19 @@ section {
   transform: translateX(-100px);
   transition: all 0.5s ease-in-out;
 }
-.timeline-item p {
+.timeline-item .text-content {
   display: none;
   transition: all 0.3s ease-in-out;
 }
-.timeline-item .image {
+.timeline-item .image, .timeline-item .secondary-image {
   width: 100%;
   max-width: 300px;
-  max-height: 230px;
+  max-height: 290px;
   height: auto;
   margin: 0 auto 15px auto;
   overflow: hidden;
 }
-.timeline-item .image img {
+.timeline-item .image img, .timeline-item .secondary-image img {
   width: 100%;
   height: auto;
 }
@@ -555,7 +555,7 @@ section {
   border: 1px solid var(--color-secondary);
   box-shadow: 1px 4px 15px rgba(0, 0, 0, 0.32);
 }
-.timeline-item:hover p {
+.timeline-item:hover .text-content {
   display: block;
 }
 .timeline-item::before {

@@ -538,15 +538,15 @@ section {
   transform: translateX(-100px);
   transition: all 0.5s ease-in-out;
 
-  p {
+  .text-content{
     display: none;
     transition: all 0.3s ease-in-out;
   }
 
-  .image {
+  .image, .secondary-image {
     width: 100%; // image takes full width of timeline-item
     max-width: 300px; // limit to reasonable size
-    max-height: 230px;
+    max-height: 290px;
     height: auto;
     margin: 0 auto 15px auto; // center image and add margin at the bottom
     overflow: hidden; // This will crop the image if it's too tall
@@ -563,7 +563,7 @@ section {
     border: 1px solid var(--color-secondary);
     box-shadow: 1px 4px 15px rgba(0, 0, 0, 0.32);
 
-    p {
+    .text-content{
       display: block;
     }
   }
